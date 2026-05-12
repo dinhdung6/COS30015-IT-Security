@@ -1,0 +1,178 @@
+{
+  "name": "Combined: Slowloris Analysis (Testing + Iran 2009 + Archive 2024)",
+  "versions": {
+    "attack": "16",
+    "navigator": "5.1.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Combined view of Slowloris attacks across three scenarios: Laboratory testing, Iran 2009 protests, and Internet Archive 2024",
+  "filters": {
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS",
+      "Network"
+    ]
+  },
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": false,
+    "showName": true,
+    "showAggregateScores": true,
+    "countUnscored": true
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1071.001",
+      "tactic": "command-and-control",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Web Protocols: Attack uses legitimate HTTP protocol on port 80, sending partial headers to maintain connections\n\n[Iran 2009 - Political Hacktivism] Web Protocols: Strategic use of HTTP to maintain stealth and preserve bandwidth for protester communications during civil unrest\n\n[Internet Archive 2024 - Modern Slow DoS] Web Protocols: Sophisticated use of HTTP/HTTPS with modern evasion techniques to mimic legitimate traffic patterns"
+    },
+    {
+      "techniqueID": "T1499.002",
+      "tactic": "impact",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Service Exhaustion Flood: Exhausted Apache MaxRequestWorkers (all 150 slots filled) with 500 slow connections. AH00161 error logged.\n\n[Iran 2009 - Political Hacktivism] Service Exhaustion Flood: Multiple Iranian government websites rendered unavailable for hours/days during critical political period\n\n[Internet Archive 2024 - Modern Slow DoS] Service Exhaustion Flood: Massive-scale exhaustion of Internet Archive's web services - Extended offline period affecting global access"
+    },
+    {
+      "techniqueID": "T1499.003",
+      "tactic": "impact",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Application Exhaustion Flood: Targeted HTTP application layer by sending X-a: b headers every 10-20 seconds, keeping threads occupied indefinitely\n\n[Iran 2009 - Political Hacktivism] Application Exhaustion Flood: Targeted government web servers' HTTP connection pools to disrupt state propaganda dissemination\n\n[Internet Archive 2024 - Modern Slow DoS] Application Exhaustion Flood: Advanced application-layer attack targeting modern web architectures, load balancers, and CDN infrastructure"
+    },
+    {
+      "techniqueID": "T1588.006",
+      "tactic": "resource-development",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Vulnerabilities: Acquired Slowloris Python script from public repositories to exploit HTTP connection handling\n\n[Iran 2009 - Political Hacktivism] Vulnerabilities: Protesters distributed Slowloris tool and knowledge for coordinated campaign\n\n[Internet Archive 2024 - Modern Slow DoS] Vulnerabilities: Research into modern variations of Slowloris and other slow HTTP attacks to bypass contemporary defenses"
+    },
+    {
+      "techniqueID": "T1595.002",
+      "tactic": "reconnaissance",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Vulnerability Scanning: Identified Apache/2.4 web server running mpm_prefork (thread-based) without mod_reqtimeout protection\n\n[Iran 2009 - Political Hacktivism] Vulnerability Scanning: Activists identified Iranian government websites (gerdab.ir, leader.ir) as vulnerable targets\n\n[Internet Archive 2024 - Modern Slow DoS] Vulnerability Scanning: Advanced reconnaissance of Internet Archive's large-scale infrastructure, CDN, and load balancing systems"
+    },
+    {
+      "techniqueID": "T1583.006",
+      "tactic": "resource-development",
+      "enabled": true,
+      "score": 5,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff8866",
+      "comment": "[Iran 2009 - Political Hacktivism] Web Services: Used distributed infrastructure across multiple protester machines to avoid self-inflicted network saturation\n\n[Internet Archive 2024 - Modern Slow DoS] Web Services: Established sophisticated botnet infrastructure with thousands of compromised systems for massive distributed assault"
+    },
+    {
+      "techniqueID": "T1090.003",
+      "tactic": "command-and-control",
+      "enabled": true,
+      "score": 4,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ffaa66",
+      "comment": "[Testing Scenario - Slowloris Attack] Multi-hop Proxy: Command used --proxy-host 127.0.0.1 --proxy-port 1080 to route attack through SOCKS proxy\n\n[Internet Archive 2024 - Modern Slow DoS] Multi-hop Proxy: Used proxy networks and compromised systems to obscure attack sources and evade IP-based blocking"
+    },
+    {
+      "techniqueID": "T1491.002",
+      "tactic": "impact",
+      "enabled": true,
+      "score": 3,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff9999",
+      "comment": "[Internet Archive 2024 - Modern Slow DoS] External Defacement: Made world's largest digital library unavailable to public, affecting researchers, historians, and general users globally"
+    },
+    {
+      "techniqueID": "T1588.001",
+      "tactic": "resource-development",
+      "enabled": true,
+      "score": 3,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff9999",
+      "comment": "[Internet Archive 2024 - Modern Slow DoS] Malware: Likely deployed custom/modified slow DoS tools and botnet malware for large-scale distributed attack"
+    },
+    {
+      "techniqueID": "T1491.001",
+      "tactic": "impact",
+      "enabled": true,
+      "score": 2,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ffcc80",
+      "comment": "[Iran 2009 - Political Hacktivism] Internal Defacement: Silenced government communications by making internal propaganda websites inaccessible to Iranian citizens"
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ffffff",
+      "#ff6644"
+    ],
+    "minValue": 0,
+    "maxValue": 6
+  },
+  "legendItems": [
+    {
+      "label": "Score 1: Testing Scenario only",
+      "color": "#fff1a1"
+    },
+    {
+      "label": "Score 2: Iran 2009 only",
+      "color": "#ffcc80"
+    },
+    {
+      "label": "Score 3: Internet Archive 2024 only",
+      "color": "#ff9999"
+    },
+    {
+      "label": "Score 4: Testing + Archive",
+      "color": "#ffaa66"
+    },
+    {
+      "label": "Score 5: Iran + Archive",
+      "color": "#ff8866"
+    },
+    {
+      "label": "Score 6: ALL THREE scenarios",
+      "color": "#ff6644"
+    }
+  ],
+  "metadata": [],
+  "links": [],
+  "showTacticRowBackground": false,
+  "tacticRowBackground": "#dddddd"
+}

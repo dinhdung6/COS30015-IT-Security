@@ -1,0 +1,211 @@
+{
+  "name": "Combined: Slowloris Analysis (Testing + Iran 2009 + Archive 2024)",
+  "versions": {
+    "attack": "16",
+    "navigator": "5.1.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Combined view of Slowloris attacks across three scenarios: Laboratory testing, Iran 2009 protests, and Internet Archive 2024",
+  "filters": {
+    "platforms": [
+      "Linux",
+      "Windows",
+      "macOS",
+      "Network"
+    ]
+  },
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "aggregateFunction": "average",
+    "showID": false,
+    "showName": true,
+    "showAggregateScores": false,
+    "countUnscored": false
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1071.001",
+      "tactic": "command-and-control",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Attack leverages legitimate HTTP protocol interactions via port 80\n\n[Iran 2009 - Slowloris Against Government Sites] HTTP protocol used to maintain stealth and preserve bandwidth for protester communications\n\n[Internet Archive 2024 - Modern Slow DoS Variant] Sophisticated use of HTTP/HTTPS protocols with modern evasion techniques"
+    },
+    {
+      "techniqueID": "T1498",
+      "tactic": "impact",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Network Denial of Service - Results in complete service unavailability (HTTP 000, connection timeouts)\n\n[Iran 2009 - Slowloris Against Government Sites] Strategic denial of service - Disrupted state communications while preserving protester bandwidth\n\n[Internet Archive 2024 - Modern Slow DoS Variant] Critical infrastructure denial - Major digital library unavailable for extended period"
+    },
+    {
+      "techniqueID": "T1499.002",
+      "tactic": "impact",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Service Exhaustion Flood - Slowloris exhausts Apache MaxRequestWorkers by maintaining 500 partial HTTP connections\n\n[Iran 2009 - Slowloris Against Government Sites] Service Exhaustion - Multiple government websites rendered unavailable during civil unrest\n\n[Internet Archive 2024 - Modern Slow DoS Variant] Service Exhaustion at massive scale - Extended Internet Archive offline period"
+    },
+    {
+      "techniqueID": "T1499.003",
+      "tactic": "impact",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Application Exhaustion Flood - Targets Apache's thread-based connection handling logic with partial HTTP headers\n\n[Iran 2009 - Slowloris Against Government Sites] Application-layer attack targeting government web server connection pools\n\n[Internet Archive 2024 - Modern Slow DoS Variant] Advanced application-layer exhaustion targeting modern web architectures"
+    },
+    {
+      "techniqueID": "T1588.006",
+      "tactic": "resource-development",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Adversary acquires Slowloris tool (Python-based script) from public repositories\n\n[Iran 2009 - Slowloris Against Government Sites] Protesters acquired and distributed Slowloris tool for coordinated campaign\n\n[Internet Archive 2024 - Modern Slow DoS Variant] Modern slow DoS variants and evolved Slowloris techniques acquired"
+    },
+    {
+      "techniqueID": "T1595",
+      "tactic": "reconnaissance",
+      "enabled": true,
+      "score": 6,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff6644",
+      "comment": "[Testing Scenario - Slowloris Attack] Attacker identifies Apache/2.4 web server and version through banner grabbing\n\n[Iran 2009 - Slowloris Against Government Sites] Activists identified Iranian government websites as targets (gerdab.ir, leader.ir)\n\n[Internet Archive 2024 - Modern Slow DoS Variant] Advanced reconnaissance of Internet Archive infrastructure and content delivery systems"
+    },
+    {
+      "techniqueID": "T1595.002",
+      "tactic": "reconnaissance",
+      "enabled": true,
+      "score": 4,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ffaa66",
+      "comment": "[Testing Scenario - Slowloris Attack] Vulnerability scanning to confirm Apache is susceptible to Slowloris (thread-based MPM prefork configuration)\n\n[Internet Archive 2024 - Modern Slow DoS Variant] Detailed vulnerability scanning to identify weaknesses in large-scale infrastructure"
+    },
+    {
+      "techniqueID": "T1090",
+      "tactic": "command-and-control",
+      "enabled": true,
+      "score": 3,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff9999",
+      "comment": "[Internet Archive 2024 - Modern Slow DoS Variant] Likely used proxy infrastructure to obscure attack sources"
+    },
+    {
+      "techniqueID": "T1485",
+      "tactic": "impact",
+      "enabled": true,
+      "score": 3,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff9999",
+      "comment": "[Internet Archive 2024 - Modern Slow DoS Variant] Data availability destruction - Cultural heritage and historical records inaccessible"
+    },
+    {
+      "techniqueID": "T1491",
+      "tactic": "impact",
+      "enabled": true,
+      "score": 3,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff9999",
+      "comment": "[Internet Archive 2024 - Modern Slow DoS Variant] Potential defacement or manipulation during extended outage window"
+    },
+    {
+      "techniqueID": "T1583.006",
+      "tactic": "resource-development",
+      "enabled": true,
+      "score": 3,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ff9999",
+      "comment": "[Internet Archive 2024 - Modern Slow DoS Variant] Established botnet infrastructure for massive distributed attack"
+    },
+    {
+      "techniqueID": "T1565",
+      "tactic": "impact",
+      "enabled": true,
+      "score": 2,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ffcc80",
+      "comment": "[Iran 2009 - Slowloris Against Government Sites] Manipulation of information flow - Silenced government propaganda during political crisis"
+    },
+    {
+      "techniqueID": "T1583",
+      "tactic": "resource-development",
+      "enabled": true,
+      "score": 2,
+      "metadata": [],
+      "links": [],
+      "showSubtechniques": true,
+      "color": "#ffcc80",
+      "comment": "[Iran 2009 - Slowloris Against Government Sites] Used distributed infrastructure (multiple protester machines) to avoid network saturation"
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ffffff",
+      "#ff6644"
+    ],
+    "minValue": 0,
+    "maxValue": 6
+  },
+  "legendItems": [
+    {
+      "label": "Score 1: Testing Scenario only",
+      "color": "#fff1a1"
+    },
+    {
+      "label": "Score 2: Iran 2009 only",
+      "color": "#ffcc80"
+    },
+    {
+      "label": "Score 3: Internet Archive 2024 only",
+      "color": "#ff9999"
+    },
+    {
+      "label": "Score 4: Testing + Archive",
+      "color": "#ffaa66"
+    },
+    {
+      "label": "Score 5: Iran + Archive",
+      "color": "#ff8866"
+    },
+    {
+      "label": "Score 6: ALL THREE scenarios",
+      "color": "#ff6644"
+    }
+  ],
+  "metadata": [],
+  "links": [],
+  "showTacticRowBackground": false,
+  "tacticRowBackground": "#dddddd"
+}
